@@ -1,5 +1,9 @@
 import React from 'react'
 
+const initialFormState = { id: null, name: '', username: ''}
+
+const [user, seUser] = useState(initialFormState)
+
 const AddUserForm = props => {
     return (
         <form>
