@@ -27,7 +27,7 @@ const editRow = user => {
 
   const addUser = user => {
     user.id = users.length + 1
-    setUsers([...useState, user])
+    setUsers([...users, user])
   }
 
   const deleteUser = id => {
