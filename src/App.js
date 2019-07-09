@@ -3,6 +3,7 @@ import UserTable from './tables/UserTable'
 import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
 
+const App = () => {
 const [editing, setEditing] = useState(false)
 
 const initialFormState = { id: null, name: '', username: ''}
@@ -14,7 +15,7 @@ const editRow = user => {
 
   setCurrentUser({ id: user.id, name: user.name, username: user.username})
 }
-const App = () => {
+
 
   const usersData= [
     { id: 1, name: "name 1", username: 'user1' },
@@ -60,8 +61,6 @@ const App = () => {
               </div>
           )
           }
-          <h2>Add User</h2>
-          <AddUserForm addUser={addUser}/>
         </div>
         <div className="flex-large">
           <h2> View Users</h2>
