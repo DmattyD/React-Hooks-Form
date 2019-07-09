@@ -1,6 +1,7 @@
 import React from 'react'
-import { setUseProxies } from 'immer';
+import { useState } from 'react';
 
+const AddUserForm = props => {
 const initialFormState = { id: null, name: '', username: ''}
 
 const [user, setUser] = useState(initialFormState)
@@ -11,14 +12,14 @@ const handleInputChange = event => {
 
     setUser({ ...user, [name]: value})
 }
-const AddUserForm = props => {
+
     return (
         <form
         onSubmit={event => {
             event.preventDefault()
             if (!user.name || !user.username) return
             props.addUser(user)
-            setUseProxies(initialFormState)
+            setUser(initialFormState)
         }}>
             <label>Name</label>
             <input type="text" name="name" value={user.name} onChange={handleInputChange} />
